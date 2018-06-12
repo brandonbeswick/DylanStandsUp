@@ -1,0 +1,151 @@
+html{
+    box-sizing: border-box;
+    color: #edf9ff;
+}
+body{ 
+    padding: 0;
+    margin: 0;
+    background: #2F7AB7;
+    background-repeat: repeat; 
+}
+img{
+    width: 100%;
+}
+.top-nav{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: space-around; 
+    border-bottom: 2px solid #72BCEB;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.home-logo h1{
+    color: white;
+    font-family: 'Rock Salt', cursive;
+    letter-spacing: 4px;
+    font-size: 16px;
+    text-shadow: 1px 2px #72BCEB, 4px 3px #0F2386;    
+}
+.menu-butt{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+}
+.menu-butt i{
+    font-size: 2em;
+}
+
+.top-menu{
+    position: absolute;
+    display: grid; 
+    align-items: center;
+    justify-items: center;
+    background: rgba(39, 60, 152, .9);
+    right: 0;
+    left: 0;
+    height:  0vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    overflow: hidden;    
+    transition: all .4s;
+}
+
+.grow{
+    height: 60vh; 
+    transition: all .8s; 
+}
+
+.top-menu li{
+    border: 2px solid black;}
+.top-menu a{
+    text-decoration: none;
+    color: #edf9ff;
+}
+.top-menu a:first-of-type{
+    font-size: 2em;
+    padding-right: 10px;
+    justify-self: flex-end; 
+}
+
+.slider-box{
+    display: grid; 
+    height: 450px;
+    background: black;
+
+    border-bottom: 2px solid #72BCEB;    
+}
+.slide{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin: auto; 
+    max-width: 600px;
+    max-height: 450px; 
+    z-index: 1; 
+    opacity: 0;
+    transition: all .8s;
+    transform: translateX(-20%)
+}
+.active{
+    opacity: 1;
+    transition: all 1.2s;    
+    transform: translateX(0);    
+}
+.home-holder{
+    display: grid;
+    height: 60vh;  
+    
+}
+.blog-holder{
+
+    display: grid;
+    height: 60vh;      
+}
+.dates-holder{
+    display: grid;
+    height: 60vh;  
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    border: 2px solid #72BCEB;
+    padding-left: 8px;
+    padding-right: 6px;
+    background: rgba(39, 60, 152, .75);
+    width: 90%;
+    margin: 10px;
+}
+.calendar{
+    display: grid;
+    justify-items: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.calTitle{
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / -1;
+}
+.calHead{
+    font-size: 1.2em;
+}
+.blogPreview{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+}
+@media only screen and (min-width: 800px) {
+    .blogPreview{
+ 
+        grid-template-columns: 1fr 1fr 1fr;
+    }    
+}
+.blogEx{
+    border: 2px solid white;
+    margin: 10px; 
+}
