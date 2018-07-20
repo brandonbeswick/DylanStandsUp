@@ -1,38 +1,67 @@
+/*
+font-family: 'Eczar', serif;
+font-family: 'Gentium Basic', serif;
+*/
+
+:root {
+    --primeCol: #131333; 
+    --primeColRGBA: 19, 19, 51;
+    --secondCol: #EAEAEA;
+    --borderCol: #BABABA; 
+    
+}
+
 html{
-    box-sizing: border-box;
-    color: #edf9ff;
+    box-sizing: border-box; 
 }
 body{ 
     padding: 0;
     margin: 0;
-    background: #2F7AB7;
+    background: var(--primeCol);
     background-repeat: repeat; 
+    font-family: 'Gentium Basic', serif;    
+    line-height: 1.2em; 
+    font-size: 18px;
+}
+@media only screen and (min-width: 800px) {
+    body{  
+        font-size: 24px;
+    }    
 }
 img{
     width: 100%;
+}
+h1, h2, h3, h4, h5, a li{
+    letter-spacing: .08em;
+    font-family: 'Eczar', serif;
+}
+p{
+    
 }
 .top-nav{
     display: grid;
     grid-template-columns: 3fr 1fr;
     justify-items: space-around; 
-    border-bottom: 2px solid #72BCEB;
+    border-bottom: 2px solid var(--borderCol);
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 15px;
+    background: var(--secondCol);
 }
 .home-logo h1{
-    color: white;
+    color: #3B3B71;
     font-family: 'Rock Salt', cursive;
     letter-spacing: 4px;
     font-size: 16px;
-    text-shadow: 1px 2px #72BCEB, 4px 3px #0F2386;    
+    text-shadow: 1px 1px #131333, 2px 2px #BABABA;   
 }
 .menu-butt{
     display: flex;
     justify-content: flex-end;
     align-items: center; 
 }
-.menu-butt i{
+.menu-butt i{ 
     font-size: 2em;
+    color: #3B3B71;
 }
 
 .top-menu{
@@ -40,7 +69,7 @@ img{
     display: grid; 
     align-items: center;
     justify-items: center;
-    background: rgba(39, 60, 152, .9);
+    background: rgba(var(--primeColRGBA), .95);
     right: 0;
     left: 0;
     height:  0vh;
@@ -49,32 +78,72 @@ img{
     margin: 0;
     z-index: 5;
     overflow: hidden;    
-    transition: all .4s;
+    transition: all .3s;
 }
 
 .grow{
-    height: 60vh; 
-    transition: all .8s; 
+    height: 100%; 
+    transition: all .6s; 
+    border-bottom: 2px solid var(--borderCol);
 }
 
 .top-menu li{
-    border: 2px solid black;}
+    color: white;
+}
 .top-menu a{
     text-decoration: none;
     color: #edf9ff;
+    font-size: 1.8em;
 }
 .top-menu a:first-of-type{
     font-size: 2em;
     padding-right: 10px;
     justify-self: flex-end; 
 }
+.desk-menu{
+    display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .home-logo h1{
+        font-size: 26px;
+    }
+    .top-nav{
+        grid-template-columns: 3fr 2fr;
+    }
+    .desk-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none; 
+        padding: 0;
+        margin: 0;
+        padding-right: 8px;
+    }
+    .desk-menu a{
+        text-decoration: none;
+        color: #3B3B71; 
+        font-weight: 800;
+        border-top: 3px solid var(--secondCol);
+        margin-bottom: -10px;
+        transition: all .1s;
+    } 
+    .desk-menu a:hover{
+        transition: all .6s;
+        border-top: 3px solid #3B3B71;
+    }    
+    .menu-butt{
+        display: none;
+    }
+
+}
 
 .slider-box{
     display: grid; 
-    height: 450px;
+    height: 300px;
     background: black;
 
-    border-bottom: 2px solid #72BCEB;    
+    border-bottom: 2px solid var(--borderCol);    
 }
 .slide{
     display: block;
@@ -84,12 +153,13 @@ img{
     overflow: hidden;
     margin: auto; 
     max-width: 600px;
-    max-height: 450px; 
+    max-height: 300px; 
     z-index: 1; 
     opacity: 0;
     transition: all .8s;
     transform: translateX(-20%)
 }
+/* Adjuest the Hight of Slide and Slide Box for respinsiveness */
 .active{
     opacity: 1;
     transition: all 1.2s;    
@@ -97,34 +167,51 @@ img{
 }
 .home-holder{
     display: grid;
-    height: 60vh;  
+    
     
 }
-.blog-holder{
-
-    display: grid;
-    height: 60vh;      
+.home-holder h2, .home-holder p{
+    padding: 0;
+    margin: 0;
+}
+.home-holder h2{
+    padding-top: 10px;
+    padding-bottom: 6px;
+}  
+.blog-holder{ 
+    display: grid;      
+}
+.contact-holder{
+    display: grid; 
 }
 .dates-holder{
-    display: grid;
-    height: 60vh;  
+    display: grid; 
     
 }
 .container{
     display: flex;
     flex-direction: column;
     justify-self: center;
-    border: 2px solid #72BCEB;
+    border: 2px solid var(--borderCol);
     padding-left: 8px;
     padding-right: 6px;
-    background: rgba(39, 60, 152, .75);
+    background: var(--secondCol);
     width: 90%;
     margin: 10px;
+    padding-bottom: 20px;
+}
+.container h3,.container h2, .container p{
+    padding: 0;
+    margin: 0;
+}
+.container h3, .container h2{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 .calendar{
-    display: grid;
-    justify-items: center; 
-    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;  
+    grid-template-columns: 1fr 1fr 1fr; 
 }
 .calTitle{
     display: flex;
@@ -132,20 +219,119 @@ img{
     grid-column: 1 / -1;
 }
 .calHead{
+    display: grid;
+    align-items: flex-end;
+    align-content: center;
+    justify-items: stretch; 
+    text-align: center;
     font-size: 1.2em;
 }
+.calCel{
+    display: grid;
+    align-items: flex-end;
+    align-content: center;
+    justify-items: stretch; 
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 10px;    
+}
+.calCel a{
+    text-decoration: none;
+}
+.calCel a > p {
+    background: var(--primeCol);
+    padding: 10px;
+    font-size: .7em;
+    border-radius: 20px;
+    color: var(--secondCol);
+}
+.venu-link{
+    background: var(--primeCol);
+    padding: 10px;
+    font-size: .7em;
+    border-radius: 20px;
+    color: var(--secondCol);
+}
+
+
 .blogPreview{
     display: grid;
+    margin-top: 10px;
+    margin-bottom: 10px;
     grid-gap: 10px;
     grid-template-columns: 1fr;
+}
+.blogPreview h3, .blogPreview p {
+    padding: 0;
+    margin: 0;
+}
+.blogPreview h3{
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+}
+.blogPreview p{
+    padding-left: 8px;
+    padding-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+}
+
+.blogEx{
+    border: 2px solid var(--borderCol);
+
 }
 @media only screen and (min-width: 800px) {
     .blogPreview{
  
         grid-template-columns: 1fr 1fr 1fr;
     }    
+    .blogEx{
+        margin: 10px; 
+    }
 }
-.blogEx{
-    border: 2px solid white;
-    margin: 10px; 
+
+
+/* Email Tag */
+
+.emailTag{
+    background: var(--primeCol);
+    color: var(--secondCol);
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.footer{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    background: var(--secondCol);
+}
+.footer p{
+    padding: 0;
+    margin: 0;
+    padding-bottom: 4px;
+}
+.footer p:first-of-type{
+    padding-top: 10px;
+}
+.footer ul{
+    display: flex;
+    justify-content: space-around; 
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    list-style: none;
+    max-width: 400px;
+    padding: 10px;
+}
+.footer ul li{
+    padding-left: 8px;
+    padding-right: 8px;
 }
